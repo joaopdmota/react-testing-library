@@ -15,41 +15,40 @@ const Todo = () => {
         updateTask('');
     }
 
-    return (<>
-        <form
-            onSubmit={handleFormSubmit}
-        >
-            <input
-                data-testid="form-field"
-                onChange={handleInputChange}
-                placeholder="new task here"
-                value={task}
-                type="text"
-            />
-            <button
-                data-testid="form-btn"
-                type="submit"
-            >
-                Add new todo
+    return (
+        <>
+            <form onSubmit={handleFormSubmit}>
+                <input
+                    data-testid="form-field"
+                    onChange={handleInputChange}
+                    placeholder="new task here"
+                    value={task}
+                    type="text"
+                />
+                <button
+                    data-testid="form-btn"
+                    type="submit"
+                >
+                    Add new todo
             </button>
-        </form>
-        <table data-testid="table">
-            <thead>
-                <tr>
-                    <th>Task</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    tasks.map((t, i) =>
+            </form>
+            <table data-testid="table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {tasks.map((t, i) =>
                         <tr key={i}>
                             <td>{t}</td>
                         </tr>
-                    )
-                }
-            </tbody>
-        </table>
-    </>
+                    )}
+                </tbody>
+            </table>
+            <div>
+            </div>
+        </>
     )
 }
 
